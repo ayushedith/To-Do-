@@ -1,92 +1,110 @@
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Basic styling */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  .main-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .add-section {
-    margin-bottom: 20px;
-  }
-  
-  .add-section input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    outline: none;
-  }
-  
-  .add-section button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .add-section button span {
-    font-size: 20px;
-  }
-  
-  .show-todo-section {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-  }
-  
-  .list-group-item {
-    position: relative;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-  }
-  
-  .list-group-item h2 {
-    flex-grow: 1;
-    margin-left: 10px;
-    font-size: 18px;
-  }
-  
-  .list-group-item h2.checked {
-    text-decoration: line-through;
-    color: #999;
-  }
-  
-  .check-box {
-    margin-right: 10px;
-  }
-  
-  .remove-to-do {
-    position: absolute;
-    right: 5px;
-    top: 20%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #ff6666;
-  }
-  
-  .empty {
-    text-align: center;
-    color: #999;
-    padding: 40px;
-  }
-  
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://cdn.discordapp.com/attachments/1015703654956810270/1195660730461069395/undefined_-_Imgur.jpg') center/cover no-repeat fixed;
+  color: #2ee0ee;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
-  
+.main-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: radial-gradient(circle, #053849, #355f6d); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.25s ease-in-out;
+  border-radius: 15px; 
+}
+
+
+
+
+
+.add-section {
+  margin-bottom: 20px;
+}
+
+.add-section input[type="text"] {
+  width: calc(100% - 22px);                                                                                                                                                                                                                                                                                                                                     /*Code with love by baba ayush also known as edith </>*/
+  padding: 10px;
+  border: 1px solid #ffcc00; 
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.add-section button {
+  padding: 10px 20px;
+  background: #4caf50; 
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.add-section button:hover {
+  background: #45a049; 
+  transform: scale(1.05);
+}
+
+.add-section button span {
+  font-size: 20px;
+}
+
+.show-todo-section {
+  border-top: 1px solid #ffcc00; 
+  padding-top: 20px;
+}
+
+.list-group-item {
+  position: relative;
+  padding: 20px;
+  border-bottom: 1px solid #ffcc00; 
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+  border-radius: 8px; 
+}
+
+.list-group-item:hover {
+  background: #333; 
+}
+
+.list-group-item h2 {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.list-group-item h2.checked {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.check-box {
+  margin-right: 10px;
+}
+
+.remove-to-do {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ff4500; 
+  transition: color 0.3s ease-in-out;
+}
+
+.remove-to-do:hover {
+  color: #ff6347; 
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
