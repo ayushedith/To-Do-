@@ -8,7 +8,7 @@ $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,36 +17,41 @@ $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                <div class="card rounded" style="border-radius: 25px;">
                     <div class="card-header text-center">
-                        <h2>To-Do List App</h2>
+                        <h2><b>👻 To-Do List 👻</b></h2>
                     </div>
                     <div class="card-body">
-                        <form action="endpoint/add.php" method="POST" autocomplete="off">
-                            <div class="input-group mb-3">
-                                <input type="text" name="title" class="form-control <?= isset($_GET['mess']) && $_GET['mess'] == 'error' ? 'is-invalid' : '' ?>" placeholder="<?= isset($_GET['mess']) && $_GET['mess'] == 'error' ? 'You must do something! Be Productive!' : 'What do you need to do?' ?>">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-primary">Add</button>
+                             <form action="endpoint/add.php" method="POST" autocomplete="off">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="title" class="form-control <?= isset($_GET['mess']) && $_GET['mess'] == 'error' ? 'is-invalid' : '' ?>" placeholder="<?= isset($_GET['mess']) && $_GET['mess'] == 'error' ? '⚠️Stop being lazy, do something productive!' : 'What tasks are you working on?' ?>">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">➕</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        
-                        <?php if ($todos->rowCount() <= 0) { ?>
-                            <div class="alert alert-secondary text-center" role="alert">
-                               <h3 class="text-center">No Task for Today!</h3>
-                            </div>
-                        <?php } ?>
-                        
-                        <div class="list-group">
-                            <?php while ($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
-                                <div class="list-group-item">
-                                <span id="<?php echo $todo['id']; ?>" class="remove-to-do">x</span>
-                                <input type="checkbox" class="check-box" data-todo-id="<?php echo $todo['id']; ?>" <?php echo $todo['checked'] ? 'checked' : ''; ?>>
-                                <h2 <?php echo $todo['checked'] ? 'class="checked"' : ''; ?>><?php echo $todo['title']; ?></h2>
-                                <small class="date-finished">Created: <?php echo $todo['date_time']; ?></small>
+                                </form>
+                            
+                                <?php if ($todos->rowCount() <= 0) { ?>
+                                <div class="alert alert-secondary text-center" role="alert">
+                                 <h3 class="text-center"><b>Empty To-Do list!</b></h3>
                                 </div>
-                            <?php } ?>
-                        </div>
-                    </div>
+                                <?php } ?>
+                            
+                                <div class="list-group">
+                                    <?php while ($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
+                                    <div class="list-group-item">
+                                    <span id="<?php echo $todo['id']; ?>" class="remove-to-do">x</span>
+                                    <input type="checkbox" class="check-box" data-todo-id="<?php echo $todo['id']; ?>" <?php echo $todo['checked'] ? 'checked' : ''; ?>>                                                                                                                                                                           
+                                    <h2 <?php echo $todo['checked'] ? 'class="checked"' : ''; ?>><?php echo $todo['title']; ?></h2>
+                                    <h6 class="date-finished">Created: <?php echo date('d-m-Y H:i A', strtotime($todo['date_time'])); ?></h6>
+                                </div>
+                                <?php } ?>
+                            </div>
+                   
+                </div>
+
+                    
+                    
                 </div>
             </div>
         </div>
@@ -79,5 +84,6 @@ $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC");
             });
         });
     </script>
+    
 </body>
 </html>
