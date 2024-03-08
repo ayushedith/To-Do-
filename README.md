@@ -34,7 +34,7 @@ To run this app locally, follow these steps:
 If you'd like to contribute to this project, feel free to fork the repository and submit a pull request with your changes.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [GNU General Public License v3.0]([LICENSE](https://github.com/ayushedith/To-Do-app/blob/main/LICENSE)).
 
 ## Acknowledgements
 Special thanks to PHP and MySQL for providing robust tools for web development.
